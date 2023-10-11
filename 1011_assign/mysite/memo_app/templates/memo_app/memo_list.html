@@ -1,0 +1,16 @@
+<!-- memo_app/templates/memo_app/memo_list.html -->
+<form method="get">
+    <input type="text" name="q" placeholder="검색...">
+    <input type="submit" value="검색">
+</form>
+
+{% if memos %}
+    {% for memo in memos %}
+        <h2>{{ memo.title }}</h2>
+        <img src="{{ memo.image.url }}" alt="{{ memo.title }}" />
+        <p>{{ memo.content }}</p>
+        <a href="#">Delete</a>
+    {% endfor %}
+{% else %}
+    <p>검색 결과가 없습니다.</p>
+{% endif %}
