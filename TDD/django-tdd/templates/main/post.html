@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <header>
+        <!-- 헤더 내용 -->
+    </header>
+
+    <main>
+        <h2>{{ post.title }}</h2>
+        <p class='contents-updated'>{{ post.updated_at|date:"Y-m-d" }}</p>
+
+        <!-- 포스트의 나머지 내용 -->
+        <p class='contents-text'>{{ post.content }}</p>
+        
+    </main>
+
+    <footer>
+        <!-- 푸터 내용 -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+</head>
+<body>
+    <header>
+        <!-- 헤더 내용 -->
+    </header>
+
+    <main>
+        <h1>Blog Posts</h1>
+        {% for post in posts %}
+            <div>
+                <h2 class='contents-heading'><a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.content|truncatewords:30 }}</p>
+            </div>
+        {% empty %}
+            <p>게시물이 존재하지 않습니다. 첫번째 게시물에 주인공이 되세요!</p>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <!-- 푸터 내용 -->
+    </footer>
+</body>
+</html>

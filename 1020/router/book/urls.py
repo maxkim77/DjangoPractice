@@ -1,6 +1,10 @@
-# book > urls.py
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter # default router는 기능 많고요. simple router는 기능 적어요.
+from .views import BookViewSet
 
-from django.urls import path
-from . import views
+router = DefaultRouter()
+router.register('', BookViewSet)
 
-urlpatterns = []
+urlpatterns = [
+    path('', include(router.urls)),
+]
